@@ -71,7 +71,7 @@ main {
     margin-bottom: 20px; /* Espacio debajo de esta fila */
 }
 
-.config-section, .messages-section {
+.config-section {
     /* Estas secciones estarán debajo y tomarán todo el ancho disponible */
     margin-bottom: 20px;
 }
@@ -268,7 +268,7 @@ a:hover {
 }
 
 /* Estilos para Configuración y Mensajes */
-.config-section, .messages-section {
+.config-section {
     display: none;
     width: 100%;
     margin-top: 20px;
@@ -280,7 +280,7 @@ a:hover {
     overflow-wrap: break-word; /* Permite que las palabras largas se ajusten */
     word-wrap: break-word;
     word-break: break-word;
-    max-height: 400px; /* Altura máxima para mostrar contenido */
+    max-height: 500px; /* Altura máxima para mostrar contenido */
     overflow-y: auto; /* Permite el desplazamiento vertical si el contenido es demasiado grande */
 }
 
@@ -336,7 +336,7 @@ a:hover {
         font-size: 12px;
     }
 
-    .config-section, .messages-section {
+    .config-section {
         font-size: 10px; /* Reducir el tamaño de fuente en pantallas más pequeñas */
         width: 100%;
     }
@@ -382,7 +382,7 @@ a:hover {
         font-size: 12px;
     }
 
-    .config-section, .messages-section {
+    .config-section {
         font-size: 9px; /* Reducir aún más el tamaño de fuente en pantallas muy pequeñas */
         width: 100%;
     }
