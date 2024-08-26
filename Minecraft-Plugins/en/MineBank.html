@@ -19,7 +19,7 @@
                 <h2>MineBank</h2>
                 <h2>[1.8 - 1.21]</h2>
                 <br>
-                <h4>Version: 1.0.3</h4>
+                <h4>Version: 1.1.1</h4>
                 <a href="#" class="download-link">Download</a>
                 <button onclick="goBack()" class="back-button">Back</button>
                 <button id="configButton" onclick="toggleConfig()" class="config-button">Configuration</button>
@@ -100,8 +100,9 @@ bank:
     # You can add and remove levels if you want
 
   profit:
-    keep-in-bank: 2  # Percentaje of profit for having money in the bank
-    interval: 300  # Interval in seconds to receive profit
+    min-amount-to-win: 100 # Min amount of money in the bank to receive profit
+    keep-in-bank: 2 # Percentaje of profit for having money in the bank
+    interval: 300 # Interval in seconds to receive profit
   interests:
     withdraw: 5 # Percentaje of interest in withdraw money
 </pre>
@@ -196,7 +197,7 @@ messages:
   # Variables: %plugin%
   command-no-argument: '%plugin% &7Use &e/minebank help &7to see the command list.'
   no-perm: '%plugin% &cYou don`t have permission to use that command.'
-  console-error: '%plugin% &cYou can`t use that command in consolel.'
+  console-error: '%plugin% &cYou can`t use that command in console.'
 
 # ############################################################################################################# #
 # +-----------------------------------------------------------------------------------------------------------+ #
@@ -274,12 +275,14 @@ bank:
     # Variables: %plugin%, %maxStorage%
     maxStorage: '%plugin% &eThe maximum amount you can store at your current level is: &a$%maxStorage%'
     # Variables: %plugin%, %maxLevel%
-    maxLevel: "%plugin% &aThe maximum bank level is &e%maxLevel%."
+    maxLevel: '%plugin% &aThe maximum bank level is &e%maxLevel%.'
   profit:
     # Variables: %plugin%, $%profit%, %percentage%
     received: '%plugin% &aYou have received $%profit% for keeping your money in the bank!'
+    # Variables: %plugin%, %amount%
+    min-storage: '%plugin% &cYou need al least $%amount% in the bank to start earning benefits.'
     # Variables: %plugin%
-    max-storage: "%plugin% &cYou need to withdraw money from the bank to continue earning benefits."
+    max-storage: '%plugin% &cYou need to withdraw money from the bank to continue earning benefits.'
   # Variables: %plugin%
   notPlayer: '%plugin% &cOnly players can use this command.'
   # Variables: %plugin%, %player%

@@ -19,7 +19,7 @@
                 <h2>MineBank</h2>
                 <h2>[1.8 - 1.21]</h2>
                 <br>
-                <h4>Versión: 1.0.3</h4>
+                <h4>Versión: 1.1.1</h4>
                 <a href="#" class="download-link">Descargar</a>
                 <button onclick="goBack()" class="back-button">Volver</button>
                 <button id="configButton" onclick="toggleConfig()" class="config-button">Configuración</button>
@@ -100,6 +100,7 @@ bank:
     # Puedes agregar y eliminar niveles si lo deseas
 
   profit:
+    min-amount-to-win: 100 # Cantidad mínima de dinero en el banco para recibir ganancias
     keep-in-bank: 2  # Porcentaje de ganancia por tener dinero en el banco
     interval: 300  # Intervalo en segundos para recibir ganancias
   interests:
@@ -274,10 +275,12 @@ bank:
     # Variables: %plugin%, %maxStorage%
     maxStorage: '%plugin% &eLa cantidad máxima que puedes almacenar en tu nivel actual es: &a$%maxStorage%'
     # Variables: %plugin%, %maxLevel%
-    maxLevel: "%plugin% &aEl nivel máximo del banco es &e%maxLevel%."
+    maxLevel: '%plugin% &aEl nivel máximo del banco es &e%maxLevel%.'
   profit:
     # Variables: %plugin%, $%profit%, %percentage%
     received: '%plugin% &a¡Has recibido $%profit% por mantener tu dinero en el banco!'
+    # Variables: %plugin%, %amount%
+    min-storage: '%plugin% &cNecesita al menos $%amount% en el banco para comenzar a ganar beneficios.'
     # Variables: %plugin%
     max-storage: "%plugin% &cNecesitas retirar dinero del banco para seguir ganando beneficios."
   # Variables: %plugin%
