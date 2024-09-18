@@ -2,298 +2,214 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Details of the MineBank plugin for Minecraft, including features, commands, permissions, and more.">
     <title>MineBank - Plugin Details</title>
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/scripts.js" defer></script>
 </head>
 <body>
-    <!--<header>
-        <h1>MineBank</h1>
-    </header>-->
-
     <main class="plugin-container-plugin">
         <div class="plugin-container-row">
             <div class="plugin-details">
-                <img class="image-resize" src="../images/icon.png" alt="MineBank">
+                <img class="image-resize" src="../images/MineBank.png" alt="MineBank">
                 <h2>MineBank</h2>
                 <h2>[1.8 - 1.21]</h2>
                 <br>
-                <h4>Version: 1.1.1</h4>
-                <a href="#" class="download-link">Download</a>
-                <button onclick="goBack()" class="back-button">Back</button>
-                <button id="configButton" onclick="toggleConfig()" class="config-button">Configuration</button>
-                <button id="messagesButton" onclick="toggleMessages()" class="messages-button">Messages</button>
+                <p>Versión: 4.0.2</p>
+                <a href="https://www.spigotmc.org/resources/MineBank.119147/" class="download-link" target="_blank">Download</a>
+                <button onclick="goBack()" class="back-button">Go Back</button>
             </div>
-
+            
             <div class="plugin-description">
-                <p></p>
-                <img src="../images/en/minebank comandos y permisos.png" alt="MineBank Description">
+                <div class="tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" data-tab="index">Home</button>
+                        <button class="tab-button" data-tab="features">Features</button>
+                        <button class="tab-button" data-tab="placeholders">Placeholders</button>
+                        <button class="tab-button" data-tab="commands">Commands</button>
+                        <button class="tab-button" data-tab="permissions">Permissions</button>
+                        <button class="tab-button" data-tab="dependencies">Dependencies</button>
+                        <button class="tab-button" data-tab="others">Others</button>
+                    </div>
+
+                    <div class="tab-content" id="index">
+                        <h3>Home</h3>
+                        <div class="index-list">
+                            <p><a href="https://www.spigotmc.org/resources/MineBank.119147/" target="_blank">MineBank</a> - Created by <a href="https://www.spigotmc.org/resources/authors/guayando.2109441/" target="_blank">Guayando</a></p>
+                            <p>Compiled with Java 8</p>
+                            <div class="stats-container">
+                                <div class="stats-info">
+                                    <h2 class="green"><strong>Statistics</strong></h2>
+                                    <p><strong class="blue">+500 Downloads</strong></p>
+                                    <p><a href="https://bstats.org/plugin/bukkit/MineBank/23185" target="_blank">Plugin Statistics: bStats</a></p>
+                                    <br>
+                                    <div class="status-images">
+                                        <img src="https://img.shields.io/bstats/servers/23185?label=Servers&logo=Minecraft" alt="Servers">
+                                        <img src="https://img.shields.io/bstats/players/23185?label=Players&logo=Minecraft&color=green" alt="Players">
+                                    </div>
+                                </div>
+                                <div class="stats-image">
+                                    <img src="https://bstats.org/signatures/bukkit/MineBank.svg" alt="Plugin Statistics">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="index-list">
+                            <p>If you have found any errors or have an idea for this plugin, you can submit it here: <a href="https://github.com/Guayand0/Minecraft-Plugin-MineBank/issues" target="_blank">Github-Support</a></p>
+                        </div>
+                        <!-- Add more content to the home tab if needed -->
+                    </div>
+                    
+                    <div class="tab-content" id="features">
+                        <h3>Features</h3>
+                        <div class="features-list">
+                            <div class="feature-item">Allows storing money in the bank.</div>
+                            <div class="feature-item">Allows earning money passively by keeping money in the bank.</div>
+                            <div class="feature-item">Allows losing money with interest when withdrawing from the bank.</div>
+                            <div class="feature-item">Creates banks with unlimited levels and storage.</div>
+                            <div class="feature-item">Each bank has its own permission.</div>
+                            <div class="feature-item">Allows using all placeholders in messages.</div>
+                            <div class="feature-item">Allows using placeholders in the inventory GUI.</div>
+                            <div class="feature-item">Supports <a href="https://wiki.placeholderapi.com/users/placeholder-list/" target="_blank">PlaceholderAPI</a> in messages and inventory GUI.</div>
+                            <br>
+                            <div class="feature-item">Customizable inventory GUI (1.13+):</div>
+                            <div class="feature-item-sub">· Change the inventory name</div>
+                            <div class="feature-item-sub">· Change the inventory size</div>
+                            <div class="feature-item-sub">· Change item position</div>
+                            <div class="feature-item-sub">· Change default item</div>
+                            <div class="feature-item-sub">· Change item name</div>
+                            <div class="feature-item-sub">· Change item lore</div>
+                            <div class="feature-item-sub">· Change item quantity</div>
+                            <div class="feature-item-sub">· Change player head texture</div>
+                            <div class="feature-item-sub">· Click on the item to execute a command</div>
+                            <div class="feature-item-sub">· Add a required permission to use the command</div>
+                            <div class="feature-item-sub">· Support for <a href="https://wiki.placeholderapi.com/users/placeholder-list/" target="_blank">PlaceholderAPI</a>.</div>
+                            <!-- Add more features if needed -->
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="placeholders">
+                        <h3>Placeholders</h3>
+                        <div class="placeholders-list">
+                            <div class="placeholder-item">MineBank Plugin Placeholders</div>
+                            <div class="placeholder-data">Work in messages and inventory</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-placeholder">%plugin%</strong> - Displays the plugin prefix</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-placeholder">%version%</strong> - Displays the current plugin version</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-placeholder">%latestversion%</strong> - Displays the latest plugin version</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-placeholder">%link%</strong> - Displays the plugin download link</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-placeholder">%author%</strong> - Displays the plugin author</div>
+                            <br>
+                            <div class="placeholder-data">Work in messages and inventory</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-player-placeholder">%playerName%</strong> - Displays the name of the player using the command.</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-player-placeholder">%playerBankBalance%</strong> - Displays the current money in the bank of the player using the command.</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-player-placeholder">%playerBankLevel%</strong> - Displays the bank level of the player using the command.</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-player-placeholder">%playerBankName%</strong> - Displays the bank name of the player using the command.</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-player-placeholder">%playerBankMaxStorage%</strong> - Displays the maximum bank money of the player using the command.</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-player-placeholder">%playerBankMaxLevel%</strong> - Displays the maximum bank level of the player using the command.</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-player-placeholder">%playerBankTop%</strong> - Displays the bank top position of the player using the command.</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-player-placeholder">%playerBalance%</strong> - Displays the economy balance of the player using the command.</div>
+                            <br>
+                            <div class="placeholder-item-sub">· <strong class="plugin-player-placeholder">%unlockNextLevelPrice%</strong> - Displays the amount of money needed to level up the bank of the player using the command.</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-player-placeholder">%unlockNextLevel%</strong> - Displays the new bank level after leveling up for the player using the command.</div>
+                            <br>
+                            <div class="placeholder-data">Work only in messages</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-target-placeholder">%targetName%</strong> - Displays the name of the player receiving the command.</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-target-placeholder">%targetBankBalance%</strong> - Displays the current money in the bank of the player receiving the command.</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-target-placeholder">%targetBankLevel%</strong> - Displays the bank level of the player receiving the command.</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-target-placeholder">%targetBankName%</strong> - Displays the bank name of the player receiving the command.</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-target-placeholder">%targetBankMaxStorage%</strong> - Displays the maximum bank money of the player receiving the command.</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-target-placeholder">%targetBankMaxLevel%</strong> - Displays the maximum bank level of the player receiving the command.</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-target-placeholder">%targetBankTop%</strong> - Displays the bank top position of the player receiving the command.</div>
+                            <div class="placeholder-item-sub">· <strong class="plugin-target-placeholder">%targetBalance%</strong> - Displays the economy balance of the player receiving the command.</div>
+                            <!-- Add more placeholders if needed -->
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="commands">
+                        <h3>Commands</h3>
+                        <div class="commands-list">
+                            <div class="command-item">
+                                <h4>/minebank help</h4>
+                                <p>Shows the list of all MineBank commands.</p>
+                            </div>
+                            <div class="command-item">
+                                <h4>/minebank reload</h4>
+                                <p>Reloads the MineBank configuration files.</p>
+                            </div>
+                            <div class="command-item">
+                                <h4>/minebank setlevel <level> [player]</h4>
+                                <p>Sets the bank level for a player.</p>
+                            </div>
+                            <div class="command-item">
+                                <h4>/minebank setstorage <storage> [player]</h4>
+                                <p>Sets the bank storage amount for a player.</p>
+                            </div>
+                            <div class="command-item">
+                                <h4>/minebank balance [player]</h4>
+                                <p>Shows the bank balance of a player.</p>
+                            </div>
+                            <div class="command-item">
+                                <h4>/minebank deposit <amount> [player]</h4>
+                                <p>Deposits money into a player's bank.</p>
+                            </div>
+                            <div class="command-item">
+                                <h4>/minebank withdraw <amount> [player]</h4>
+                                <p>Withdraws money from a player's bank.</p>
+                            </div>
+                            <div class="command-item">
+                                <h4>/minebank pay <player> <amount></h4>
+                                <p>Transfers money from your bank to another player's bank.</p>
+                            </div>
+                            <!-- Add more commands if needed -->
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="permissions">
+                        <h3>Permissions</h3>
+                        <div class="permissions-list">
+                            <div class="permission-item">
+                                <h4>minebank.admin</h4>
+                                <p>Grants access to all administrative commands.</p>
+                            </div>
+                            <div class="permission-item">
+                                <h4>minebank.use</h4>
+                                <p>Allows use of bank commands.</p>
+                            </div>
+                            <div class="permission-item">
+                                <h4>minebank.create</h4>
+                                <p>Allows creation of new banks.</p>
+                            </div>
+                            <div class="permission-item">
+                                <h4>minebank.access.<bankname></h4>
+                                <p>Allows access to a specific bank.</p>
+                            </div>
+                            <!-- Add more permissions if needed -->
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="dependencies">
+                        <h3>Dependencies</h3>
+                        <div class="dependencies-list">
+                            <p>The MineBank plugin depends on the following plugins:</p>
+                            <ul>
+                                <li><a href="https://www.spigotmc.org/resources/placeholderapi.6245/" target="_blank">PlaceholderAPI</a></li>
+                                <!-- Add more dependencies if needed -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="others">
+                        <h3>Others</h3>
+                        <div class="others-list">
+                            <div class="other-item">
+                                <h4>Other Information</h4>
+                                <p>Details on configuration and usage can be found in the plugin documentation or support page.</p>
+                            </div>
+                            <!-- Add more other items if needed -->
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Nueva sección de configuración -->
-        <div id="config-section" class="config-section">
-<pre>
-# ############################################################################################################# #
-# +-----------------------------------------------------------------------------------------------------------+ #
-# |                                                                                                           | #
-# |                      ███╗   ███╗██╗███╗  ██╗███████╗██████╗  █████╗ ███╗  ██╗██╗  ██╗                     | #
-# |                      ████╗ ████║██║████╗ ██║██╔════╝██╔══██╗██╔══██╗████╗ ██║██║ ██╔╝                     | #
-# |                      ██╔████╔██║██║██╔██╗██║█████╗  ██████╦╝███████║██╔██╗██║█████═╝                      | #
-# |                      ██║╚██╔╝██║██║██║╚████║██╔══╝  ██╔══██╗██╔══██║██║╚████║██╔═██╗                      | #
-# |                      ██║ ╚═╝ ██║██║██║ ╚███║███████╗██████╦╝██║  ██║██║ ╚███║██║ ╚██╗                     | #
-# |                      ╚═╝     ╚═╝╚═╝╚═╝  ╚══╝╚══════╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚══╝╚═╝  ╚═╝                     | #
-# |                                                                                                           | #
-# |                    Youtube:    www.youtube.com/@davigamer1614                                             | #
-# |                    Github:     https://github.com/Guayand0/Minecraft-Plugin-MineBank                      | #
-# |                                                                                                           | #
-# +-----------------------------------------------------------------------------------------------------------+ #
-# ############################################################################################################# #
-
-# ############################################################################################################# #
-# +-----------------------------------------------------------------------------------------------------------+ #
-# |                                                                                                           | #
-# |                                █████╗  █████╗ ███╗  ██╗███████╗██╗ ██████╗                                | #
-# |                               ██╔══██╗██╔══██╗████╗ ██║██╔════╝██║██╔════╝                                | #
-# |                               ██║  ╚═╝██║  ██║██╔██╗██║█████╗  ██║██║  ██╗                                | #
-# |                               ██║  ██╗██║  ██║██║╚████║██╔══╝  ██║██║  ╚██╗                               | #
-# |                               ╚█████╔╝╚█████╔╝██║ ╚███║██║     ██║╚██████╔╝                               | #
-# |                                ╚════╝  ╚════╝ ╚═╝  ╚══╝╚═╝     ╚═╝ ╚═════╝                                | #
-# |                                                                                                           | #
-# +-----------------------------------------------------------------------------------------------------------+ #
-# ############################################################################################################# #
-
-config:
-
-  # Enable/Disable the bank plugin
-  bank-use: true
-  # Variables: %plugin%
-  bank-disabled-message: '%plugin% &cThe bank function is currently disabled'
-
-  # Enable/Disable the new version available message (update-message)
-  update-checker: true
-  # Variables: %plugin%, %version%, %latestversion%, %link%
-  update-message: '%plugin% &bNew version available &e(&f%latestversion%&e)&b. Download it here: &7%link%'
-
-# ############################################################################################################# #
-# +-----------------------------------------------------------------------------------------------------------+ #
-# |                                                                                                           | #
-# |              ██████╗  █████╗ ███╗  ██╗██╗  ██╗   █████╗  █████╗ ███╗  ██╗███████╗██╗ ██████╗              | #
-# |              ██╔══██╗██╔══██╗████╗ ██║██║ ██╔╝  ██╔══██╗██╔══██╗████╗ ██║██╔════╝██║██╔════╝              | #
-# |              ██████╦╝███████║██╔██╗██║█████═╝   ██║  ╚═╝██║  ██║██╔██╗██║█████╗  ██║██║  ██╗              | #
-# |              ██╔══██╗██╔══██║██║╚████║██╔═██╗   ██║  ██╗██║  ██║██║╚████║██╔══╝  ██║██║  ╚██╗             | #
-# |              ██████╦╝██║  ██║██║ ╚███║██║ ╚██╗  ╚█████╔╝╚█████╔╝██║ ╚███║██║     ██║╚██████╔╝             | #
-# |              ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚══╝╚═╝  ╚═╝   ╚════╝  ╚════╝ ╚═╝  ╚══╝╚═╝     ╚═╝ ╚═════╝              | #
-# |                                                                                                           | #
-# +-----------------------------------------------------------------------------------------------------------+ #
-# ############################################################################################################# #
-
-bank:
-  level:
-    # MaxStorageAmount;UnlockNextLevelPrice
-    1: 5000;2000
-    2: 10000;5000
-    3: 20000;10000
-    4: 50000;25000
-    5: 100000;50000
-    # You can add and remove levels if you want
-
-  profit:
-    min-amount-to-win: 100 # Min amount of money in the bank to receive profit
-    keep-in-bank: 2 # Percentaje of profit for having money in the bank
-    interval: 300 # Interval in seconds to receive profit
-  interests:
-    withdraw: 5 # Percentaje of interest in withdraw money
-</pre>
-        </div>
-
-        <!-- Nueva sección de mensajes -->
-        <div id="messages-section" class="config-section">
-<pre>
-# ############################################################################################################# #
-# +-----------------------------------------------------------------------------------------------------------+ #
-# |                                                                                                           | #
-# |                      ███╗   ███╗██╗███╗  ██╗███████╗██████╗  █████╗ ███╗  ██╗██╗  ██╗                     | #
-# |                      ████╗ ████║██║████╗ ██║██╔════╝██╔══██╗██╔══██╗████╗ ██║██║ ██╔╝                     | #
-# |                      ██╔████╔██║██║██╔██╗██║█████╗  ██████╦╝███████║██╔██╗██║█████═╝                      | #
-# |                      ██║╚██╔╝██║██║██║╚████║██╔══╝  ██╔══██╗██╔══██║██║╚████║██╔═██╗                      | #
-# |                      ██║ ╚═╝ ██║██║██║ ╚███║███████╗██████╦╝██║  ██║██║ ╚███║██║ ╚██╗                     | #
-# |                      ╚═╝     ╚═╝╚═╝╚═╝  ╚══╝╚══════╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚══╝╚═╝  ╚═╝                     | #
-# |                                                                                                           | #
-# |                    Youtube:    www.youtube.com/@davigamer1614                                             | #
-# |                    Github:     https://github.com/Guayand0/Minecraft-Plugin-MineBank                      | #
-# |                                                                                                           | #
-# +-----------------------------------------------------------------------------------------------------------+ #
-# ############################################################################################################# #
-
-# ############################################################################################################# #
-# +-----------------------------------------------------------------------------------------------------------+ #
-# |                                                                                                           | #
-# |                    ███╗   ███╗███████╗ ██████╗ ██████╗ █████╗  ██████╗ ███████╗ ██████╗                   | #
-# |                    ████╗ ████║██╔════╝██╔════╝██╔════╝██╔══██╗██╔════╝ ██╔════╝██╔════╝                   | #
-# |                    ██╔████╔██║█████╗  ╚█████╗ ╚█████╗ ███████║██║  ██╗ █████╗  ╚█████╗                    | #
-# |                    ██║╚██╔╝██║██╔══╝   ╚═══██╗ ╚═══██╗██╔══██║██║  ╚██╗██╔══╝   ╚═══██╗                   | #
-# |                    ██║ ╚═╝ ██║███████╗██████╔╝██████╔╝██║  ██║╚██████╔╝███████╗██████╔╝                   | #
-# |                    ╚═╝     ╚═╝╚══════╝╚═════╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═════╝                    | #
-# |                                                                                                           | #
-# +-----------------------------------------------------------------------------------------------------------+ #
-# ############################################################################################################# #
-
-messages:
-
-  # Variables: NA
-  help:
-    - '&b&lt;-----------------&aCOMMANDS MINEBANK&b-----------------&gt;'
-    - '&e/minebank help &7Show this message'
-    - '&e/minebank reload &7Reload plugin config'
-    - '&e/minebank version &7Show plugin version'
-    - '&e/minebank author &7Show plugin author'
-    - '&e/minebank permissions &7Show plugin permission list'
-    - '&e/minebank plugin &7Show plugin download link'
-    - '&e/bank help &7Show bank command list'
-    - '&7Aliases: &eminebank&7, &emb'
-
-  # Variables: NA
-  help-bank:
-    - '&b&lt;-----------------&aCOMMANDS MINEBANK&b-----------------&gt;'
-    - '&e/bank help &7- Show this message'
-    - '&e/bank add &lt;amount&gt; &7- Deposit money'
-    - '&e/bank take &lt;amount&gt; &7- Withdraw money'
-    - '&e/bank set &lt;player&gt; bal &lt;amount&gt; &7- Set player balance'
-    - '&e/bank set &lt;player&gt; level &lt;amount&gt; &7- Set player level'
-    - '&e/bank top &7- Show top 10 players with the most money'
-    - '&e/bank bal &7- Check your balance'
-    - '&e/bank bal &lt;player&gt; &7- Check another player`s balance'
-    - '&e/bank max bal &7- Check maximum capacity'
-    - '&e/bank max level &7- Check maximum level'
-    - '&e/bank level &7- Check your bank level'
-    - '&e/bank levelup &7- Level up your bank account'
-
-  # Variables: %plugin%
-  reload: '%plugin% &aThe plugin has been reloaded.'
-
-  # Variables: %plugin%, %version%, %latestversion%
-  version: '%plugin% &aPlugin version: &b%version%'
-
-  # Variables: %plugin%, %author%
-  author: '%plugin% &aPlugin author: &b%author%'
-
-  # Variables: NA
-  permissions:
-    - '&b&lt;-----------------&aPERMISSIONS MINEBANK&b-----------------&gt;'
-    - '&eminebank.* &7- OP permissions'
-    - '&eminebank.help &7- Allow to use &e/minebank help'
-    - '&eminebank.reload &7- Allow to use &e/minebank reload'
-    - '&eminebank.version &7- Allow to use &e/minebank version'
-    - '&eminebank.author &7- Allow to use &e/minebank author'
-    - '&eminebank.plugin &7- Allow to use &e/minebank plugin'
-    - '&eminebank.permissions &7- Allow to use &e/minebank permissions'
-    - '&eminebank.updatechecker &7- Allow receive message if there is an update'
-    - '&eminebank.admin &7- Allow to use /bank set and other admin commands'
-    - '&eminebank.use &7- Allow to use the bank'
-    - '&eminebank.helpbank &7- Allow to use &e/bank help'
-
-  # Variables: %plugin%
-  command-no-argument: '%plugin% &7Use &e/minebank help &7to see the command list.'
-  no-perm: '%plugin% &cYou don`t have permission to use that command.'
-  console-error: '%plugin% &cYou can`t use that command in console.'
-
-# ############################################################################################################# #
-# +-----------------------------------------------------------------------------------------------------------+ #
-# |                                                                                                           | #
-# |  ██████╗  █████╗ ███╗  ██╗██╗  ██╗  ███╗   ███╗███████╗ ██████╗ ██████╗ █████╗  ██████╗ ███████╗ ██████╗  | #
-# |  ██╔══██╗██╔══██╗████╗ ██║██║ ██╔╝  ████╗ ████║██╔════╝██╔════╝██╔════╝██╔══██╗██╔════╝ ██╔════╝██╔════╝  | #
-# |  ██████╦╝███████║██╔██╗██║█████═╝   ██╔████╔██║█████╗  ╚█████╗ ╚█████╗ ███████║██║  ██╗ █████╗  ╚█████╗   | #
-# |  ██╔══██╗██╔══██║██║╚████║██╔═██╗   ██║╚██╔╝██║██╔══╝   ╚═══██╗ ╚═══██╗██╔══██║██║  ╚██╗██╔══╝   ╚═══██╗  | #
-# |  ██████╦╝██║  ██║██║ ╚███║██║ ╚██╗  ██║ ╚═╝ ██║███████╗██████╔╝██████╔╝██║  ██║╚██████╔╝███████╗██████╔╝  | #
-# |  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚══╝╚═╝  ╚═╝  ╚═╝     ╚═╝╚══════╝╚═════╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═════╝   | #
-# |                                                                                                           | #
-# +-----------------------------------------------------------------------------------------------------------+ #
-# ############################################################################################################# #
-
-bank:
-  usage:
-    # Variables: %plugin%
-    bank: '%plugin% &eUsage: /bank &lt;top/bal/max/level/levelup/add/take/set&gt;'
-    add: '%plugin% &eUsage: /bank add &lt;amount&gt;'
-    take: '%plugin% &eUsage: /bank take &lt;amount&gt;'
-    set: '%plugin% &eUsage: /bank set &lt;player&gt; &lt;bal/level&gt; &lt;amount&gt;'
-    top: '%plugin% &eUsage: /bank top'
-    bal: '%plugin% &eUsage: /bank bal, /bank bal &lt;player&gt;'
-    max: '%plugin% &eUsage: /bank max &lt;bal/level&gt;'
-    level: '%plugin% &eUsage: /bank level'
-    levelup: '%plugin% &eUsage: /bank levelup'
-  bal:
-    # Variables: %plugin%, %balance%
-    yourBalance: '%plugin% &eYour current bank balance is: &a$%balance%'
-    # Variables: %plugin%, %player%, %balance%
-    playerBalance: '%plugin% &e%player%`s balance is: &a$%balance%'
-  take:
-    # Variables: %plugin%, %amount%, %percentage%, %totalDeducted%
-    withdrawSuccess: '%plugin% &aYou have withdrawn $%amount% from your bank. The bank charge is: $%totalDeducted%'
-    # Variables: %plugin%
-    withdrawFailure: '%plugin% &cThe amount must be positive and integer number.'
-    withdrawExceeds: '%plugin% &cYou do not have enough money in your bank to withdraw that amount.'
-    interestsWithdrawExceeds: '%plugin% &cThe interest exceed the amount in your bank.'
-  add:
-    # Variables: %plugin%, %amount%
-    depositSuccess: '%plugin% &aYou have deposited $%amount% into your bank.'
-    # Variables: %plugin%, %maxStorage%
-    balanceExceeds: '%plugin% &cYou cannot store more than $%maxStorage% at your current bank level.'
-    # Variables: %plugin%
-    depositFailure: '%plugin% &cThe amount must be positive and integer number.'
-    notEnoughMoney: '%plugin% &cYou do not have enough money to deposit that amount.'
-  set:
-    # Variables: %plugin%, %maxStorage%
-    maxBalance: '%plugin% &cThe amount cannot be higher than $%maxStorage%'
-    # Variables: %plugin%, %maxLevel%
-    maxLevel: '%plugin% &cThe level cannot be higher than %maxLevel%'
-    # Variables: %plugin%, %player%, $%amount%
-    setBalanceSuccess: '%plugin% &aSet %player%`s balance to $%amount%'
-    setLevelSuccess: '%plugin% &aSet %player%`s bank level to %amount%'
-    # Variables: %plugin%
-    depositFailure: '%plugin% &cThe amount must be positive and integer number.'
-  top:
-    # Variables: %plugin%
-    title: '%plugin% &eTop 10 players with the most money in the bank:'
-    # Variables: %plugin%, %position%, %player%, %balance%
-    entry: '&e%position%. %player%: &a$%balance%'
-  level:
-    # Variables: %plugin%, %level%
-    current: '%plugin% &eYour bank level is: &a%level%'
-  levelup:
-    # Variables: %plugin%, %unlockPrice%
-    notEnoughMoney: '%plugin% &cYou don`t have enough money in the bank to level up, you need $%unlockPrice%'
-    # Variables: %plugin%, %unlockLevel%
-    unlockPriceError: '%plugin% &cInvalid unlock price in configuration for level %unlockLevel%'
-    # Variables: %plugin%, %newLevel%
-    success: '%plugin% &aYou have successfully leveled up to level %newLevel%'
-    # Variables: %plugin%
-    alreadyMax: '%plugin% &cYou are already at the maximum level.'
-  max:
-    # Variables: %plugin%, %maxStorage%
-    maxStorage: '%plugin% &eThe maximum amount you can store at your current level is: &a$%maxStorage%'
-    # Variables: %plugin%, %maxLevel%
-    maxLevel: '%plugin% &aThe maximum bank level is &e%maxLevel%.'
-  profit:
-    # Variables: %plugin%, $%profit%, %percentage%
-    received: '%plugin% &aYou have received $%profit% for keeping your money in the bank!'
-    # Variables: %plugin%, %amount%
-    min-storage: '%plugin% &cYou need al least $%amount% in the bank to start earning benefits.'
-    # Variables: %plugin%
-    max-storage: '%plugin% &cYou need to withdraw money from the bank to continue earning benefits.'
-  # Variables: %plugin%
-  notPlayer: '%plugin% &cOnly players can use this command.'
-  # Variables: %plugin%, %player%
-  notFoundPlayer: '%plugin% &cPlayer %player% not found.'
-</pre>
         </div>
     </main>
-    <br><br>
-    <footer>
-        © 2024 - BEAMONDO. All rights reserved.
-    </footer>
-
 </body>
 </html>

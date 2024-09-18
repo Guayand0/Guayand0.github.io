@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Maneja el clic en el contenedor de la imagen para abrir la imagen grande
     document.querySelectorAll('.plugin-item').forEach(item => {
-        item.addEventListener('click', () => {
-            window.location.href = item.getAttribute('data-link');
+        item.addEventListener('click', (e) => {
+            // Verifica si el clic fue en un enlace de descarga
+            if (!e.target.classList.contains('download-link')) {
+                window.location.href = item.getAttribute('data-link');
+            }
         });
     });
 
@@ -28,53 +31,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Maneja el cambio de idioma
     const languageSelect = document.getElementById('language-select');
-    languageSelect.addEventListener('change', (event) => {
-        const selectedLanguage = event.target.value;
-        const targetPage = selectedLanguage === 'es' ? 'index_es.html' : 'index_en.html';
-        window.location.href = targetPage;
+    if (languageSelect) {
+        languageSelect.addEventListener('change', (event) => {
+            const selectedLanguage = event.target.value;
+            const targetPage = selectedLanguage === 'es' ? 'index_es.html' : 'index_en.html';
+            window.location.href = targetPage;
+        });
+    }
+
+    // MineBank pestañas click tabs
+    function openTab(tabId) {
+        // Ocultar todos los contenidos de las pestañas
+        document.querySelectorAll('.tab-content').forEach(tab => {
+            tab.classList.remove('active');
+        });
+
+        // Eliminar la clase activa de todos los botones de pestañas
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.classList.remove('active');
+        });
+
+        // Mostrar el contenido de la pestaña seleccionada
+        const tabContent = document.getElementById(tabId);
+        if (tabContent) {
+            tabContent.classList.add('active');
+        }
+
+        // Marcar el botón de pestaña como activo
+        const activeButton = document.querySelector(`.tab-button[data-tab="${tabId}"]`);
+        if (activeButton) {
+            activeButton.classList.add('active');
+        }
+    }
+
+    // Inicializar la pestaña activa por defecto
+    openTab('index');
+
+    // Añadir eventos a los botones de pestañas
+    document.querySelectorAll('.tab-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const tabId = button.getAttribute('data-tab');
+            openTab(tabId);
+        });
     });
 });
-
-function toggleConfig() {
-    var configSection = document.getElementById('config-section');
-    var messagesSection = document.getElementById('messages-section');
-    if (configSection.style.display === 'none' || configSection.style.display === '') {
-        configSection.style.display = 'block';
-        messagesSection.style.display = 'none';
-    } else {
-        configSection.style.display = 'none';
-    }
-}
-
-function toggleMessages() {
-    var configSection = document.getElementById('config-section');
-    var messagesSection = document.getElementById('messages-section');
-    if (messagesSection.style.display === 'none' || messagesSection.style.display === '') {
-        messagesSection.style.display = 'block';
-        configSection.style.display = 'none';
-    } else {
-        messagesSection.style.display = 'none';
-    }
-}
 
 function goBack() {
     window.history.back();
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Obtén los botones de Config y Messages
-    const configButton = document.getElementById('configButton');
-    const messagesButton = document.getElementById('messagesButton');
-
-    // Obtén el contenedor principal
-    const pluginContainer = document.querySelector('.plugin-container-plugin');
-
-    // Función para cambiar el flex-direction a column
-    function changeToColumnLayout() {
-        pluginContainer.style.flexDirection = 'column';
-    }
-
-    // Añade el evento de click a los botones
-    configButton.addEventListener('click', changeToColumnLayout);
-    messagesButton.addEventListener('click', changeToColumnLayout);
-});
