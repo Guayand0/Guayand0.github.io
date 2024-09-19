@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Details of the ToolTracker plugin for Minecraft, including features, commands, permissions, and more.">
+    <title>ToolTracker - Plugin Details</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/scripts.js" defer></script>
+</head>
+<body>
+    <main class="plugin-container-plugin">
+        <div class="plugin-container-row">
+            <div class="plugin-details">
+                <img class="image-resize" src="../images/ToolTracker.png" alt="ToolTracker">
+                <h2>ToolTracker</h2>
+                <h2>[1.12 - 1.21]</h2>
+                <br>
+                <p>Version: 1.0.1</p>
+                <a href="https://www.spigotmc.org/resources/ToolTracker.119680/" class="download-link" target="_blank">Download</a>
+				<button onclick="goBack()" class="back-button">Go Back</button>
+            </div>
+            
+            <div class="plugin-description">
+                <div class="tabs">
+                    <div class="tab-buttons">
+						<button class="tab-button active" data-tab="index">Home</button>
+                        <button class="tab-button" data-tab="features">Features</button>
+						<button class="tab-button" data-tab="placeholders">Placeholders</button>
+                        <button class="tab-button" data-tab="commands">Commands</button>
+                        <button class="tab-button" data-tab="permissions">Permissions</button>
+                        <button class="tab-button" data-tab="dependencies">Dependencies</button>
+						<button class="tab-button" data-tab="others">Others</button>
+                    </div>
+
+					<div class="tab-content" id="index">
+						<h3>Home</h3>
+						<div class="index-list">
+							<p><a href="https://www.spigotmc.org/resources/ToolTracker.119680/" target="_blank">ToolTracker</a> - Created by <a href="https://www.spigotmc.org/resources/authors/guayando.2109441/" target="_blank">Guayando</a></p>
+							<p>Compiled with Java 8</p>
+							<div class="stats-container">
+								<div class="stats-info">
+									<h2 class="green"><strong>Statistics</strong></h2>
+									<p><strong class="blue">+500 Downloads</strong></p>
+									<div class="status-images">
+										<img src="https://img.shields.io/spiget/version/119680.svg?label=Version&logo=Minecraft&color=red" alt="Version">
+										<img src="https://img.shields.io/badge/Stars-0★-red.svg?label=Stars&logo=Minecraft&color=yellow" alt="Stars">
+									</div>
+									<div class="status-images">
+										<img src="https://img.shields.io/badge/Category-Tools and Utilities-red.svg?label=Category&logo=Minecraft&color=pink" alt="Category">
+									</div>
+									<br>
+									<p><strong class="green">Currently Playing:</strong></p>
+									<div class="status-images">
+										<img src="https://img.shields.io/bstats/servers/23403?label=Servers&logo=Minecraft&&color=blue" alt="Servers">
+										<img src="https://img.shields.io/bstats/players/23403?label=Players&logo=Minecraft&color=green" alt="Players">
+									</div>
+									<p><a href="https://bstats.org/plugin/bukkit/ToolTracker/23403" target="_blank">Plugin statistics: bStats</a></p>
+								</div>
+								<div class="stats-image">
+									<img src="https://bstats.org/signatures/bukkit/ToolTracker.svg" alt="Plugin Statistics">
+								</div>
+							</div>
+							<p>If you've found any errors or have an idea for this plugin, you can submit it here: <a href="https://github.com/Guayand0/Minecraft-Plugin-ToolTracker/issues" target="_blank">Github-Support</a></p>
+						</div>
+						<!-- Add more content to the home section if necessary -->
+					</div>					
+					
+                    <div class="tab-content" id="features">
+						<h3>Features</h3>
+						<div class="features-list">
+							<div class="feature-item">Adds durability to the lore of items that are weapons or armor.</div>
+							<br>
+							<div class="feature-item">Support for <a href="https://wiki.placeholderapi.com/users/placeholder-list/" target="_blank">PlaceholderAPI</a>.</div>
+							<!-- Add more features if necessary -->
+						</div>
+					</div>
+
+					<div class="tab-content" id="placeholders">
+						<h3>Placeholders</h3>
+						<div class="placeholders-list">
+							<div class="placeholder-item">ToolTracker plugin placeholders</div>
+							<div class="placeholder-data">Work in messages</div>
+							<div class="placeholder-item-sub">· <strong class="plugin-placeholder">%plugin%</strong> - Shows the plugin's prefix</div>
+							<div class="placeholder-item-sub">· <strong class="plugin-placeholder">%version%</strong> - Shows the current plugin version</div>
+							<div class="placeholder-item-sub">· <strong class="plugin-placeholder">%latestversion%</strong> - Shows the latest plugin version</div>
+							<div class="placeholder-item-sub">· <strong class="plugin-placeholder">%link%</strong> - Shows the plugin download link</div>
+							<div class="placeholder-item-sub">· <strong class="plugin-placeholder">%author%</strong> - Shows the plugin's author</div>
+							<br>
+							<div class="placeholder-data">Work in item lore</div>
+							<div class="placeholder-item-sub">· <strong class="plugin-player-placeholder">%currentDurability%</strong> - Shows the current item durability.</div>
+							<div class="placeholder-item-sub">· <strong class="plugin-player-placeholder">%maxDurability%</strong> - Shows the maximum item durability.</div>
+							<br>
+							<div class="placeholder-item">Variables from <a href="https://www.spigotmc.org/resources/placeholderapi.6245/" target="_blank">PlaceholderAPI</a></div>
+							<div class="placeholder-data">Work in messages and item lore</div>
+							<!-- <div class="placeholder-item-sub">· <strong class="plugin-PAPI-placeholder">%minebank_player_name%</strong> - Shows your name</div> -->
+							<!-- Add more placeholders if necessary -->
+						</div>
+					</div>
+
+					<div class="tab-content" id="commands"> 
+						<h3>Commands</h3>
+						<div class="command-list">
+							<p>Alias - <strong class="admin-command">tooltracker, tt</strong></p>
+							<p><strong class="admin-command">/tooltracker help</strong> - Shows the list of MineBank commands</p>
+							<p><strong class="admin-command">/tooltracker reload</strong> - Reloads the plugin configuration</p>
+							<p><strong class="admin-command">/tooltracker version</strong> - Shows the plugin version</p>
+							<p><strong class="admin-command">/tooltracker author</strong> - Shows the plugin author</p>
+							<p><strong class="admin-command">/tooltracker permissions</strong> - Shows the list of plugin permissions</p>
+							<p><strong class="admin-command">/tooltracker plugin</strong> - Shows the plugin download link</p>
+							<!-- Add more commands if necessary -->
+						</div>
+					</div>
+					
+					<div class="tab-content" id="permissions">
+						<h3>Permissions</h3>
+						<div class="permission-list">
+							<p><strong class="admin-permission">tooltracker.admin</strong> - Admin permission</p>
+							<p><strong class="admin-permission">tooltracker.updatechecker</strong> - Allows receiving messages when there is an update</p>
+						</div>
+						<!-- Add more permissions if necessary -->
+					</div>
+					
+					<div class="tab-content" id="dependencies">
+						<h3>Dependencies</h3>
+						<p><strong class="green">Optional</strong></p>
+						<div class="dependencies-list">
+							<p>Support for <a href="https://www.spigotmc.org/resources/placeholderapi.6245/" target="_blank">PlaceholderAPI</a>.</p>
+						</div>
+						<!-- Add more dependencies if necessary -->
+					</div>
+					
+					<div class="tab-content" id="others">
+						<h3>Others</h3>
+						<div class="other-list">
+							<div class="updates-container">
+								<p><strong class="green">Possible future updates</strong></p>
+								<p>+ Support for versions from 1.8 to 1.11</p>
+								<p>+ Add defense percentage to armor</p>
+								<p>+ Add damage hearts to weapons</p>
+								<br>
+								<p>If you have any ideas to improve this plugin, you can submit them here: <a href="https://github.com/Guayand0/Minecraft-Plugin-ToolTracker/issues" target="_blank">Github-Idea</a></p>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</main>
+	<br><br>
+	<footer>
+		© 2024 - Guayando. All rights reserved.
+	</footer>
+</body>
+</html>
