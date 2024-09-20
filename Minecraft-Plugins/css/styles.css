@@ -913,3 +913,97 @@ a:hover {
 p strong {
     color: inherit; /* Hereda el color de la clase aplicada */
 }
+
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .plugin-item {
+        width: calc(50% - 20px);
+    }
+
+    .plugin-container-plugin {
+        flex-direction: column;
+    }
+
+    .plugin-details, .plugin-description {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px;
+    }
+
+    .plugin-description {
+        width: 55%;
+    }
+
+    .plugin-description img {
+        max-width: 100%;
+    }
+
+    .plugin-details {
+        width: 45%;
+    }
+
+    .plugin-details h2{
+        font-size: 20px;
+    }
+
+    .plugin-details h4{
+        font-size: 12px;
+    }
+
+    .config-section, .messages-section {
+        font-size: 10px; /* Reducir el tamaño de fuente en pantallas más pequeñas */
+        width: 100%;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .plugin-item {
+        width: 100%;
+    }
+
+    .plugin-container-plugin {
+        flex-direction: column;
+    }
+
+    .plugin-details, .plugin-description {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px;
+    }
+
+    .plugin-description {
+        width: 55%;
+    }
+
+    .plugin-description img {
+        max-width: 100%;
+    }
+
+    .plugin-details {
+        width: 45%;
+    }
+
+    .plugin-details h2{
+        font-size: 20px;
+    }
+
+    .plugin-details h4{
+        font-size: 12px;
+    }
+
+    .config-section, .messages-section {
+        font-size: 9px; /* Reducir aún más el tamaño de fuente en pantallas muy pequeñas */
+        width: 100%;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
